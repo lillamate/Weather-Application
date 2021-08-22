@@ -1,8 +1,8 @@
 .container {
   max-width: 600px;
   margin: 0 auto;
-  color: #f0ad4e;
-  background-color: #f8f9fa !important;
+  color: #ffcf5e;
+  background-color: #9ed79a !important;
   border-radius: 10px;
   display: block;
 }
@@ -14,7 +14,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: #5bc0de;
+  color: #068b78;
 }
 .card-subtitle {
   font-size: smaller;
