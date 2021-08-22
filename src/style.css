@@ -3,10 +3,14 @@
   margin: 30px auto;
   padding: 20px;
   color: #ffa22f;
-  background-color: #f8f9fa !important;
+  background-color: #fde8cd;
   border-radius: 10px;
   display: block;
 }
+.container-fluid {
+  background-color: #fde8cd;
+}
+
 h1 {
   font-size: 30px;
 }
