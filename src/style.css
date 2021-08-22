@@ -1,3 +1,27 @@
-h1 {
-  color: blue;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f0ad4e;
+  background-color: #f8f9fa !important;
+  border-radius: 10px;
+  display: block;
+}
+h1,
+h2 {
+  font-size: 30px;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #5bc0de;
+}
+.card-subtitle {
+  font-size: smaller;
+  font-weight: 500;
+}
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  width: 60%;
 }

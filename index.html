@@ -15,8 +15,64 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="col-md-6">
+          <form class="d-flex" id="city-search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="What city are you in?"
+              aria-label="Search"
+              id="search-city-input"
+            />
+          </div>
+          <div class="col-md-3">
+           <button class="btn btn-outline-info" type="submit">
+              Search
+            </button>
+          </div>
+          <div class="col-md-3">
+           <button class="btn btn-outline-warning" id="current-location-button">
+              Location
+            </button>
+          </div>
+          </form>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-8"><h1></h1></div>
+        <div class="col-4"><h2></h2></div>
+      </div>
+      <div class="row">
+        <div class="col-8"><p class="weather-condition" id="description"></p></div>
+        <div class="col-4"><p id="current-date"></p></div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0 mt-20">
+          <div class="col-md-6">
+            <div class="card-body">
+              <h3 class="card-title">
+                <span id="temperature"></span>°C
+              </h3>
+              <h4 class="card-subtitle">Min: <span id="temp_min"></span>°C | Max: <span id="temp_max"></span>°C</h4>
+              <br />
+              <div class="details">
+                <p class="card-text">Humidity: <span id="humidity">0</span>%</p>
+                <p class="card-text">Wind: <span id="wind">0</span> km/h</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="images/giphy.gif"
+              class="img-fluid rounded-start"
+              alt="Rainy Weather"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="src/app.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
