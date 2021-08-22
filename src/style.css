@@ -20,8 +20,6 @@ h4 {
   font-size: smaller;
   font-weight: 500;
 }
-.card-img,
-.card-img-bottom,
-.card-img-top {
-  width: 60%;
+.card-img {
+  max-width: fit-content;
 }
