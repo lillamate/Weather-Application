@@ -7,8 +7,14 @@
   border-radius: 10px;
   display: block;
 }
+.navbar {
+  align-items: stretch;
+}
 .container-fluid {
   background-color: #fde8cd;
+}
+.titles {
+  margin: 30px auto;
 }
 
 h1 {
@@ -23,6 +29,7 @@ h4 {
 .card-subtitle {
   font-size: smaller;
   font-weight: 500;
+  font-size: smaller;
 }
 .card-img {
   max-width: fit-content;
