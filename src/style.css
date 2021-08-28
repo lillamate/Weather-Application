@@ -1,7 +1,7 @@
 .container {
   max-width: 600px;
-  margin: auto;
-  padding: 50px;
+  margin: 30px auto;
+  padding: 20px;
   color: #ffa22f;
   background-color: #fde8cd;
   border-radius: 10px;
@@ -10,6 +10,18 @@
 .navbar {
   align-items: stretch;
 }
+.search-button,
+.search-button:active {
+  color: #ffa22f;
+  border-color: #ffa22f;
+}
+.search-button:hover,
+.search-button:visited {
+  color: #ffffff;
+  border-color: #ffa22f;
+  background-color: #ffa22f;
+}
+
 .container-fluid {
   background-color: #fde8cd;
 }
@@ -25,9 +37,14 @@ h3,
 h4 {
   color: #e13646;
 }
+.weather-condition {
+  font-weight: 600;
+  font-style: italic;
+  font-size: 20px;
+}
 
 .temperature {
-  font-size: 80px;
+  font-size: 60px;
 }
 a {
   text-decoration: none;
