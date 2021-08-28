@@ -28,12 +28,12 @@
               id="search-city-input"
             />
           </div>
-          <div class="col-4">
+          <div class="col-3">
            <button class="btn btn-outline-danger search-button" type="submit">
               Search
             </button>
           </div>
-          <div class="col-2">
+          <div class="col-3">
            <button class="btn btn-outline-danger" id="current-location-button">
               Your Location
             </button>
@@ -42,14 +42,16 @@
         </div>
       </nav>
       <div class="row titles">
-        <div class="col-9">
+        <div class="col-4">
           <h1></h1>
         </br>
         <p class="weather-condition" id="description"></p>
         </div>
-        <div class="col-3"><h2></h2>
+        <div class="col-3"></div>
+        <div class="col-4"><h2></h2>
           <p id="current-date"></p>
         </div>
+        <div class="col-1"></div>
       </div>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0 mt-20">
@@ -75,7 +77,23 @@
           </div>
         </div>
       </div>
-      <p><a href="https://github.com/lillamate/Weather-App">Open-source code</a> by Lilla Mate</p>
+      <div class="weather-forecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="weather-forecast-date">Thu</div><img
+              src=""
+              class="card-img"
+              alt=""
+              id="icon" width="36"
+            />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-max">18° </span>
+            <span class="weather-forecast-min">12° </span></div>
+          </div>
+        </div>
+      </div>
+    </br>
+      <p><small><a href="https://github.com/lillamate/Weather-App">Open-source code</a> by Lilla Mate</small></p>
     </div>
     <script src="src/script.js"></script>
   </body>
