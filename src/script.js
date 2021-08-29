@@ -1,37 +1,35 @@
+function getForecast(coordinates) {
+  let apiKey = "5dade0a6a276f87b4f3a99dd558bdd06";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
 function displayWeatherCondition(response) {
+  let cityElement = document.querySelector("#city-name");
+  let temperatureElement = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let minimumTempElement = document.querySelector("#temp_min");
+  let maximumTempElement = document.querySelector("#temp_max");
+  let iconElement = document.querySelector("#icon");
+
   celsiusTemperature = response.data.main.temp;
-  document.querySelector("h1").innerHTML = response.data.name;
 
-  document.querySelector("#temperature").innerHTML =
-    Math.round(celsiusTemperature);
-
-  document.querySelector("#temp_min").innerHTML = Math.round(
-    response.data.main.temp_min
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  humidityElement.innerHTML = Math.round(response.data.main.humidity);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  minimumTempElement.innerHTML = Math.round(response.data.main.temp_min);
+  maximumTempElement.innerHTML = Math.round(response.data.main.temp_max);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  document.querySelector("#temp_max").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-
-  document
-    .querySelector("#icon")
-    .setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "5dade0a6a276f87b4f3a99dd558bdd06";
@@ -73,7 +71,8 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -142,4 +141,3 @@ let celsiusConverter = document.querySelector("#c-converter");
 celsiusConverter.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Amsterdam");
-displayForecast();
