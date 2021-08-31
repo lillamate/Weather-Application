@@ -75,6 +75,9 @@ a {
 .card-img {
   width: 150px;
 }
+.forecast-cards {
+  padding: 5px;
+}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
@@ -89,5 +92,5 @@ a {
   opacity: 0.6;
 }
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 14px;
 }
