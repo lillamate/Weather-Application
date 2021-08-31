@@ -30,9 +30,11 @@
   margin: auto;
   padding: 5px;
 }
-h1,
-h2 {
+h1 {
   font-size: 30px;
+}
+h2 {
+  font-size: 16px;
 }
 h1,
 h3,
@@ -51,6 +53,9 @@ h4 {
 a {
   text-decoration: none;
 }
+.unit {
+  font-size: small;
+}
 .active {
   color: rgb(33, 33, 33);
   text-decoration: none;
@@ -68,7 +73,7 @@ a {
   font-weight: 10px;
 }
 .card-img {
-  max-width: fit-content;
+  width: 150px;
 }
 .weather-forecast {
   margin-top: 20px;
