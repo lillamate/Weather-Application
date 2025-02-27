@@ -4,6 +4,12 @@ function getForecast(coordinates) {
   console.log(apiURL);
   axios.get(apiURL).then(displayForecast);
 }
+
+// Global variables for temperature conversions
+let celsiusTemperature = null;
+let celsiusMinTemp = null;
+let celsiusMaxTemp = null;
+
 function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#city-name");
   let temperatureElement = document.querySelector("#temperature");
@@ -15,14 +21,16 @@ function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
+  celsiusMinTemp = response.data.main.temp_min;
+  celsiusMaxTemp = response.data.main.temp_max;
 
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].main;
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  minimumTempElement.innerHTML = Math.round(response.data.main.temp_min);
-  maximumTempElement.innerHTML = Math.round(response.data.main.temp_max);
+  minimumTempElement.innerHTML = Math.round(celsiusMinTemp);
+  maximumTempElement.innerHTML = Math.round(celsiusMaxTemp);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -31,6 +39,7 @@ function displayWeatherCondition(response) {
 
   getForecast(response.data.coord);
 }
+
 function searchCity(city) {
   let apiKey = "5dade0a6a276f87b4f3a99dd558bdd06";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -130,6 +139,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+// Event Listeners
 let form = document.querySelector("#city-search");
 form.addEventListener("submit", handleSubmit);
 
@@ -164,8 +174,6 @@ currentDate.innerHTML = `${date}-${month}-${year}`;
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-let celsiusTemperature = null;
 
 let fahrenheitConverter = document.querySelector("#f-converter");
 fahrenheitConverter.addEventListener("click", displayFahrenheitTemperature);
