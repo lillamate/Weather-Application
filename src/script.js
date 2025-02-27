@@ -57,18 +57,33 @@ function getCurrentLocation(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let fahrenheitMinTemp = (celsiusMinTemp * 9) / 5 + 32;
+  let fahrenheitMaxTemp = (celsiusMaxTemp * 9) / 5 + 32;
+
   celsiusConverter.classList.remove("active");
   fahrenheitConverter.classList.add("active");
+
   let temperatureElement = document.querySelector("#temperature");
+  let minimumTempElement = document.querySelector("#temp_min");
+  let maximumTempElement = document.querySelector("#temp_max");
+
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  minimumTempElement.innerHTML = Math.round(fahrenheitMinTemp);
+  maximumTempElement.innerHTML = Math.round(fahrenheitMaxTemp);
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   fahrenheitConverter.classList.remove("active");
   celsiusConverter.classList.add("active");
+
   let temperatureElement = document.querySelector("#temperature");
+  let minimumTempElement = document.querySelector("#temp_min");
+  let maximumTempElement = document.querySelector("#temp_max");
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  minimumTempElement.innerHTML = Math.round(celsiusMinTemp);
+  maximumTempElement.innerHTML = Math.round(celsiusMaxTemp);
 }
 
 function formatDay(timestamp) {
