@@ -18,4 +18,17 @@
   border-color: #ffa22f;
 }
 
-.search-b
+.search-button:hover,
+.search-button:visited {
+  color: #ffffff;
+  border-color: #ffa22f;
+  background-color: #ffa22f;
+}
+
+.container-fluid {
+  background-color: #ffe1c5;
+}
+
+.titles {
+  margin: auto;
+  p
