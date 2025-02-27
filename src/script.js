@@ -70,6 +70,8 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitMaxTemp = (celsiusMaxTemp * 9) / 5 + 32;
 
   celsiusConverter.classList.remove("active");
+  celsiusConverter.classList.add("inactive");
+  fahrenheitConverter.classList.remove("inactive")
   fahrenheitConverter.classList.add("active");
 
   let temperatureElement = document.querySelector("#temperature");
@@ -84,7 +86,10 @@ function displayFahrenheitTemperature(event) {
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   fahrenheitConverter.classList.remove("active");
+  fahrenheitConverter.classList.add("inactive");
+  celsiusConverter.classList.remove("inactive");
   celsiusConverter.classList.add("active");
+
 
   let temperatureElement = document.querySelector("#temperature");
   let minimumTempElement = document.querySelector("#temp_min");
